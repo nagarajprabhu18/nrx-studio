@@ -1,0 +1,4 @@
+import type {Metadata,Viewport} from "next";import "./globals.css";
+export const metadata:Metadata={metadataBase:new URL(process.env.NEXT_PUBLIC_SITE_URL||"http://localhost:3000"),title:{default:"NRX STUDIO — Websites with a little more feeling",template:"%s | NRX STUDIO"},description:"Creative websites for life's special moments. Premium birthday, anniversary, portfolio and business websites, made with care by NRX STUDIO.",openGraph:{title:"NRX STUDIO — Design • Develop • Inspire",description:"Turn your ideas into stunning websites.",siteName:"NRX STUDIO",type:"website",images:["/crown.svg"]},twitter:{card:"summary",title:"NRX STUDIO",description:"Creative websites for life's special moments."},icons:{icon:"/crown.svg"},robots:{index:true,follow:true}};
+export const viewport:Viewport={themeColor:"#080910",colorScheme:"dark"};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}

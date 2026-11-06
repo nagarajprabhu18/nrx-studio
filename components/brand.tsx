@@ -1,0 +1,2 @@
+import Image from "next/image";import Link from "next/link";
+export function Brand({small=false}:{small?:boolean}) { return <Link href="/" className="flex items-center gap-2.5" aria-label="NRX Studio home"><Image src="/crown.svg" width={small?28:34} height={small?28:34} alt=""/><span className="font-semibold tracking-[.13em] text-[13px]">NRX <span className="text-[#a78bfa]">STUDIO</span></span></Link>; }

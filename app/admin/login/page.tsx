@@ -1,0 +1,1 @@
+import {redirect} from "next/navigation";import {getAdmin} from "@/lib/auth";import {AdminLogin} from "@/components/admin-login";export const metadata={title:"Admin sign in"};export default async function LoginPage(){if(await getAdmin())redirect("/admin/dashboard");return <AdminLogin/>}

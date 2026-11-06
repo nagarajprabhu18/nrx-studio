@@ -1,0 +1,2 @@
+import {requireAdmin} from "@/lib/auth";import {createClient} from "@/lib/supabase/server";import {AdminShell} from "@/components/admin-shell";import {ReviewManager} from "@/components/review-manager";import type {Review} from "@/lib/types";export const dynamic="force-dynamic";
+export default async function ReviewsPage(){await requireAdmin();const db=await createClient();const{data}=db?await db.from("reviews").select("*").order("created_at",{ascending:false}):{data:[]};return <AdminShell><ReviewManager initial={(data??[]) as Review[]}/></AdminShell>}
